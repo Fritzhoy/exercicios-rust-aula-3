@@ -45,8 +45,10 @@ fn adicionar_elemento(vetor9: &mut Vec<i32>, n: &i32) -> Vec<i32> {
 }
 
 //10. Ciclo de Empréstimo Mutável
-fn double_vector(vector10: &mut Vec<i32>) -> Vec<i32> {
-    vector10.iter().map(|&x| x * 2).collect()
+fn double_vector(numeros: &mut Vec<i32>) {
+    for n in numeros.iter_mut() {
+        *n *= 2;
+    }
 }
 
 fn main() {
@@ -127,10 +129,10 @@ fn main() {
     );
     println!();
 
-    //10. Ciclo de Empréstimo Mutável
+   //10. Ciclo de Empréstimo Mutável
     println!("Exercício 10");
     let mut vector10 = vec![8, 10, 11, 18, 25];
-    vector10 = double_vector(&mut vector10);
+    double_vector(&mut vector10);
     println!("O vetor resultante é: {:?}", vector10);
 
     println!();
